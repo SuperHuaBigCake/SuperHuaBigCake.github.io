@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>
+        Attack Tools |
+        
+        SuperHua is Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="常用攻击工具的使用以及下载地址Afrog漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;zan8in&#x2F;afrog   批量检测目标  afrog.exe -T urls.txt   检测单个目标  afrog.exe -t https:&#x2F;&#x2F;example.com   更新  afrog.exe -un  Nuclei漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;projectdisc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Attack Tools">
+<meta property="og:url" content="https://superhuabigcake.github.io/2023/06/27/Attack-Tools/index.html">
+<meta property="og:site_name" content="SuperHua is Blog">
+<meta property="og:description" content="常用攻击工具的使用以及下载地址Afrog漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;zan8in&#x2F;afrog   批量检测目标  afrog.exe -T urls.txt   检测单个目标  afrog.exe -t https:&#x2F;&#x2F;example.com   更新  afrog.exe -un  Nuclei漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;projectdisc">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-27T10:58:32.000Z">
+<meta property="article:modified_time" content="2023-06-27T12:23:47.153Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Tools">
+<meta name="twitter:card" content="summary">
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://superhuabigcake.github.io/css/markdown.css">
+        
+            <link rel="stylesheet" href="https://superhuabigcake.github.io/css/july.css">
+        
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+
+<div id="banner-outer" class="hidden">
+    <div id="banner-image" style="background-image: url()"></div>
+    <img src="https://s1.ax1x.com/2023/06/18/pClXj4s.jpg" id="avatar">
+</div>
+
+<div id="menu-outer">
+    <div id="menu-inner">
+        
+            <a class="false" href="https://superhuabigcake.github.io/index.html">Home</a>
+        
+            <a class="false" href="https://superhuabigcake.github.io/archives/index.html">Archives</a>
+        
+            <a class="false" href="https://superhuabigcake.github.io/about/index.html">About</a>
+        
+    </div>
+</div>
+
+<div id="content-outer" class="container">
+    <div id="content-inner">
+        <article id="post">
+    <h1 id="post-title">Attack Tools</h1>
+    <time id="post-date" datetime="2023-06-27T10:58:32.000Z">
+        June 27, 2023
+    </time>
+    <div id="post-content" class="markdown-body">
+        <h1 id="常用攻击工具的使用以及下载地址"><a href="#常用攻击工具的使用以及下载地址" class="headerlink" title="常用攻击工具的使用以及下载地址"></a>常用攻击工具的使用以及下载地址</h1><h2 id="Afrog"><a href="#Afrog" class="headerlink" title="Afrog"></a>Afrog</h2><p>漏洞扫描工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/zan8in/afrog">https://github.com/zan8in/afrog</a></p>
+</blockquote>
+<ul>
+<li>批量检测目标</li>
+</ul>
+<pre><code class="cmd">afrog.exe -T urls.txt
+</code></pre>
+<ul>
+<li>检测单个目标</li>
+</ul>
+<pre><code class="cmd">afrog.exe -t https://example.com
+</code></pre>
+<ul>
+<li>更新</li>
+</ul>
+<pre><code class="cmd">afrog.exe -un
+</code></pre>
+<h2 id="Nuclei"><a href="#Nuclei" class="headerlink" title="Nuclei"></a>Nuclei</h2><p>漏洞扫描工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/projectdiscovery/nuclei">https://github.com/projectdiscovery/nuclei</a></p>
+</blockquote>
+<ul>
+<li>使用社区提供的模块扫描单个目标</li>
+</ul>
+<pre><code class="cmd">nuclei.exe -u https://example.com
+</code></pre>
+<ul>
+<li>使用社区提供的模块扫描多个目标</li>
+</ul>
+<pre><code class="cmd">nuclei.exe -list urls.txt
+</code></pre>
+<ul>
+<li>扫描指定Yaml格式POC</li>
+</ul>
+<pre><code class="cmd">nuclei.exe -u https://example.com -t kingdee-erp-deserialization.yaml
+</code></pre>
+<ul>
+<li>更新模板</li>
+</ul>
+<pre><code class="bash">nuclei.exe -update-templates
+</code></pre>
+<ul>
+<li>更新Nuclei</li>
+</ul>
+<pre><code class="cmd">nuclei.exe -update
+</code></pre>
+<ul>
+<li>生成扫描报告</li>
+</ul>
+<pre><code class="cmd">nuclei.exe -u https://example.com -o result.txt 
+</code></pre>
+<h2 id="Xpoc"><a href="#Xpoc" class="headerlink" title="Xpoc"></a>Xpoc</h2><p>漏洞扫描工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/chaitin/xpoc">https://github.com/chaitin/xpoc</a></p>
+</blockquote>
+<ul>
+<li>扫描指定目标i</li>
+</ul>
+<pre><code class="cmd">xpoc.exe -t https://example.com -o result.html
+</code></pre>
+<ul>
+<li>查看所有云端POC</li>
+</ul>
+<pre><code class="cmd">xpoc.exe list -a
+</code></pre>
+<ul>
+<li>批量扫描</li>
+</ul>
+<pre><code class="cmd">xpoc.exe -i urls.txt
+</code></pre>
+<ul>
+<li>同步最新插件</li>
+</ul>
+<pre><code class="cmd">xpoc.exe pull
+</code></pre>
+<ul>
+<li>更新Xpoc</li>
+</ul>
+<pre><code class="cmd">xpoc.exe upgrade
+</code></pre>
+<h2 id="SpringBootScan"><a href="#SpringBootScan" class="headerlink" title="SpringBootScan"></a>SpringBootScan</h2><p>针对SpringBoot框架的扫描工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/AabyssZG/SpringBoot-Scan">https://github.com/AabyssZG/SpringBoot-Scan</a></p>
+</blockquote>
+<ul>
+<li>安装python依赖库</li>
+</ul>
+<pre><code class="cmd">python3 -m pip install -r requirements.txt
+</code></pre>
+<ul>
+<li>对单一目标进行信息泄露扫描</li>
+</ul>
+<pre><code class="cmd">python3 SpringBoot-Scan.py -u example.com
+</code></pre>
+<ul>
+<li>对批量目标进行信息泄露扫描</li>
+</ul>
+<pre><code class="cmd">python3 SpringBoot-Scan.py -f url.txt
+</code></pre>
+<ul>
+<li>对单一目标进行漏洞利用</li>
+</ul>
+<pre><code class="cmd">python3 SpringBoot-Scan.py -v https://example.com
+</code></pre>
+<ul>
+<li>扫描并下载SpringBoot敏感文件</li>
+</ul>
+<pre><code class="cmd">python3 SpringBoot-Scan.py -d example.com
+</code></pre>
+<h2 id="Packer-Fuzzer"><a href="#Packer-Fuzzer" class="headerlink" title="Packer-Fuzzer"></a>Packer-Fuzzer</h2><p>针对使用Packer组件的扫描工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/rtcatc/Packer-Fuzzer">https://github.com/rtcatc/Packer-Fuzzer</a></p>
+</blockquote>
+<ul>
+<li>安装python依赖库</li>
+</ul>
+<pre><code class="python">python3 -m pip install -r requirements.txt
+</code></pre>
+<ul>
+<li>扫描单个网站Packer泄露接口漏洞</li>
+</ul>
+<pre><code class="cmd">python3 PackerFuzzer.py -u PackerFuzzer.py
+</code></pre>
+<ul>
+<li>忽略HTTPS证书错误</li>
+</ul>
+<pre><code class="cmd">python3 PackerFuzzer.py -u PackerFuzzer.py -f 1
+</code></pre>
+<h2 id="Dirsearch"><a href="#Dirsearch" class="headerlink" title="Dirsearch"></a>Dirsearch</h2><p>目录扫描工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/maurosoria/dirsearch">https://github.com/maurosoria/dirsearch</a></p>
+</blockquote>
+<ul>
+<li>安装python依赖库</li>
+</ul>
+<pre><code class="cmd">python3 -m pip install --upgrade pip
+</code></pre>
+<pre><code class="cmd">python3 -m pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+</code></pre>
+<ul>
+<li>对网站进行基础目录扫描</li>
+</ul>
+<pre><code class="cmd">python3 dirsearch.py -u https://target
+</code></pre>
+<ul>
+<li>只扫描网站php、html、js文件</li>
+</ul>
+<pre><code class="cmd">python3 dirsearch.py -e php,html,js -u https://target
+</code></pre>
+<ul>
+<li>指定字典进行目录扫描</li>
+</ul>
+<pre><code class="cmd">python3 dirsearch.py -u https://target -w SpringBootAPI.txt
+</code></pre>
+<ul>
+<li>对目录进行递归扫描</li>
+</ul>
+<pre><code class="cmd">python3 dirsearch.py -u https://target -r
+</code></pre>
+<ul>
+<li>只显示200、302状态码的请求</li>
+</ul>
+<pre><code class="cmd">python3 dirsearch.py -u https://target -i 200,302
+</code></pre>
+<ul>
+<li>不显示404、403状态码的请求</li>
+</ul>
+<pre><code class="cmd">python3 dirsearch.py -u https://target -x 404,403
+</code></pre>
+<h2 id="Netspy"><a href="#Netspy" class="headerlink" title="Netspy"></a>Netspy</h2><p>探测内网可达网段工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/shmilylty/netspy">https://github.com/shmilylty/netspy</a></p>
+</blockquote>
+<ul>
+<li>使用icmp进行探测网段</li>
+</ul>
+<pre><code class="cmd">netspy.exe is
+</code></pre>
+<ul>
+<li>使用tcp进行探测网段</li>
+</ul>
+<pre><code class="cmd">netspy.exe ts -p 22 -p 3389
+</code></pre>
+<p>注：如果不指定-p参数，netspy默认探测21, 22, 23, 80, 135, 139, 443, 445, 3389, 8080端口</p>
+<ul>
+<li>使用udp进行探测网段</li>
+</ul>
+<pre><code class="cmd">netspy.exe us -p 53 -p 137
+</code></pre>
+<p>注：如果不指定-p参数，netspy默认探测53, 123, 137, 161, 520, 523, 1645, 1701, 1900, 5353端口</p>
+<ul>
+<li>使用icmp强制进行段内所有IP存活探测</li>
+</ul>
+<pre><code class="cmd">netspy.exe -c 192.168.91.0/24 -r 255 -f is
+</code></pre>
+<ul>
+<li>使用icmp急速探测</li>
+</ul>
+<pre><code class="cmd"> netspy.exe -x is
+</code></pre>
+<p>注：急速模式协程数量为cpu核数*40，只探测段内网关</p>
+<h2 id="Fscan"><a href="#Fscan" class="headerlink" title="Fscan"></a>Fscan</h2><p>漏洞扫描工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/shadow1ng/fscan">https://github.com/shadow1ng/fscan</a></p>
+</blockquote>
+<ul>
+<li>基础使用</li>
+</ul>
+<pre><code class="cmd">fscan.exe -h 192.168.0.1/24
+</code></pre>
+<ul>
+<li>跳过存活检测</li>
+</ul>
+<pre><code class="cmd">fscan.exe -h 192.168.0.1/24 -np
+</code></pre>
+<ul>
+<li>线程为100扫描，默认为600</li>
+</ul>
+<pre><code class="cmd">fscan.exe -h 192.168.0.1/24 -t 100
+</code></pre>
+<ul>
+<li>跳过web poc扫描</li>
+</ul>
+<pre><code class="cmd">fscan.exe -h 192.168.0.1/24 -nopoc
+</code></pre>
+<ul>
+<li>跳过sql、ftp、ssh等密码的爆破</li>
+</ul>
+<pre><code class="cmd">fscan.exe -h 192.168.0.1/24 -nobr
+</code></pre>
+<ul>
+<li>设置扫描的端口</li>
+</ul>
+<pre><code class="cmd">fscan.exe -h 192.168.0.1/24 -p 1-65535
+</code></pre>
+<h2 id="OneForAll"><a href="#OneForAll" class="headerlink" title="OneForAll"></a>OneForAll</h2><p>子域名收集工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/shmilylty/OneForAll">https://github.com/shmilylty/OneForAll</a></p>
+</blockquote>
+<ul>
+<li>安装python依赖库</li>
+</ul>
+<pre><code class="cmd">python3 -m pip install -U pip setuptools wheel -i https://mirrors.aliyun.com/pypi/simple/
+</code></pre>
+<pre><code class="python">python3 -m pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+</code></pre>
+<ul>
+<li>扫描单个域名的子域名</li>
+</ul>
+<pre><code class="cmd">python3 oneforall.py --target example.com run
+</code></pre>
+<p>OneForAll在默认参数正常执行完毕会在results目录生成相应结果</p>
+<ul>
+<li>扫描txt文档中域名的子域名</li>
+</ul>
+<pre><code class="cmd">python3 oneforall.py --targets ./example.txt run
+</code></pre>
+<h2 id="ksubdomain"><a href="#ksubdomain" class="headerlink" title="ksubdomain"></a>ksubdomain</h2><p>无状态子域名爆破工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/knownsec/ksubdomain">https://github.com/knownsec/ksubdomain</a></p>
+</blockquote>
+<ul>
+<li>使用内置字典爆破</li>
+</ul>
+<pre><code class="cmd">ksubdomain.exe -d seebug.org
+</code></pre>
+<ul>
+<li>使用字典爆破域名</li>
+</ul>
+<pre><code class="cmd">ksubdomain.exe -d seebug.org -f subdomains.txt
+</code></pre>
+<ul>
+<li>爆破三级域名</li>
+</ul>
+<pre><code class="cmd">ksubdomain.exe -d seebug.org -l 2
+</code></pre>
+<ul>
+<li>使用网络API接口获取域名</li>
+</ul>
+<pre><code class="cmd">ksubdomain.exe -d seebug.org -api
+</code></pre>
+<ul>
+<li>完整模式，先使用网络API，在此基础上使用内置字典爆破</li>
+</ul>
+<pre><code class="cmd">ksubdomain.exe -d seebug.org -full
+</code></pre>
+
+    </div>
+</article>
+
+<div id="paginator">
+    
+</div>
+
+    </div>
+</div>
+
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        2019-2023 John Doe 
+    </div>
+</div>
+
+<div id="to-top">
+    <i class="iconfont icon-up"></i>
+</div>
+
+
+    
+        <script src="https://superhuabigcake.github.io/js/jquery-3.4.1.min.js"></script>
+    
+        <script src="https://superhuabigcake.github.io/js/highlight-9.13.1.min.js"></script>
+    
+        <script src="https://superhuabigcake.github.io/js/transition.js"></script>
+    
+        <script src="https://superhuabigcake.github.io/js/smooth-scroll.min.js"></script>
+    
+
+
+
+    <script>
+      $(function () {
+        $('#banner-outer').addClass('fade-out')
+        $('#menu-outer').addClass('fade-show')
+
+        $('pre').each(function (i, block) {
+          hljs.highlightBlock(block);
+        });
+      })
+    </script>
+
+
+<script>
+  $(function () {
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 150) {
+        $("#to-top").fadeIn();
+      } else {
+        $("#to-top").fadeOut();
+      }
+    });
+    $("#to-top").click(function () {
+      $("body,html").animate({scrollTop: 0}, 500);
+      return false;
+    })
+  })
+</script>
+</body>
+</html>
