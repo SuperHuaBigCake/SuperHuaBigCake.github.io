@@ -8,15 +8,15 @@
         
         SuperHua is Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="常用攻击工具的使用以及下载地址Afrog漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;zan8in&#x2F;afrog   批量检测目标  afrog.exe -T urls.txt   检测单个目标  afrog.exe -t https:&#x2F;&#x2F;example.com   更新  afrog.exe -un  Nuclei漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;projectdisc">
+    <meta name="description" content="常用工具使用以及下载地址Afrog漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;zan8in&#x2F;afrog   批量检测目标  afrog.exe -T urls.txt   检测单个目标  afrog.exe -t https:&#x2F;&#x2F;example.com   更新  afrog.exe -un  Nuclei漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;projectdiscove">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Attack Tools">
 <meta property="og:url" content="https://superhuabigcake.github.io/2023/06/27/Attack-Tools/index.html">
 <meta property="og:site_name" content="SuperHua is Blog">
-<meta property="og:description" content="常用攻击工具的使用以及下载地址Afrog漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;zan8in&#x2F;afrog   批量检测目标  afrog.exe -T urls.txt   检测单个目标  afrog.exe -t https:&#x2F;&#x2F;example.com   更新  afrog.exe -un  Nuclei漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;projectdisc">
+<meta property="og:description" content="常用工具使用以及下载地址Afrog漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;zan8in&#x2F;afrog   批量检测目标  afrog.exe -T urls.txt   检测单个目标  afrog.exe -t https:&#x2F;&#x2F;example.com   更新  afrog.exe -un  Nuclei漏洞扫描工具  https:&#x2F;&#x2F;github.com&#x2F;projectdiscove">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-27T10:58:32.000Z">
-<meta property="article:modified_time" content="2023-07-10T03:30:49.774Z">
+<meta property="article:modified_time" content="2023-08-01T05:42:01.373Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Tools">
 <meta name="twitter:card" content="summary">
@@ -57,7 +57,7 @@
         June 27, 2023
     </time>
     <div id="post-content" class="markdown-body">
-        <h1 id="常用攻击工具的使用以及下载地址"><a href="#常用攻击工具的使用以及下载地址" class="headerlink" title="常用攻击工具的使用以及下载地址"></a>常用攻击工具的使用以及下载地址</h1><h2 id="Afrog"><a href="#Afrog" class="headerlink" title="Afrog"></a>Afrog</h2><p>漏洞扫描工具</p>
+        <h1 id="常用工具使用以及下载地址"><a href="#常用工具使用以及下载地址" class="headerlink" title="常用工具使用以及下载地址"></a>常用工具使用以及下载地址</h1><h2 id="Afrog"><a href="#Afrog" class="headerlink" title="Afrog"></a>Afrog</h2><p>漏洞扫描工具</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/zan8in/afrog">https://github.com/zan8in/afrog</a></p>
 </blockquote>
@@ -227,6 +227,15 @@
 <li>不显示404、403状态码的请求</li>
 </ul>
 <pre><code class="cmd">python3 dirsearch.py -u https://target -x 404,403
+</code></pre>
+<ul>
+<li>设置代理</li>
+</ul>
+<pre><code class="cmd">python3 dirsearch.py -u https://target --proxy socks5://10.10.0.1:8080
+</code></pre>
+<pre><code class="cmd">python3 dirsearch.py -u https://target --proxy 127.0.0.1:8080
+</code></pre>
+<pre><code class="cmd">python3 dirsearch.py -u https://target --proxylist proxyservers.txt
 </code></pre>
 <h2 id="Netspy"><a href="#Netspy" class="headerlink" title="Netspy"></a>Netspy</h2><p>探测内网可达网段工具</p>
 <blockquote>
