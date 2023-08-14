@@ -16,7 +16,7 @@
 <meta property="og:description" content="常规使用 GET型  $ python3 sqlmap.py -u &quot;url&quot; --dbs  $ python3 sqlmap.py -u &quot;url&quot; -D &quot;库名&quot; --tables  $ python3 sqlmap.py -u &quot;url&quot; -D &quot;库名&quot; -T &quot;表名&quot; -">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-18T15:01:22.000Z">
-<meta property="article:modified_time" content="2023-08-14T13:43:57.737Z">
+<meta property="article:modified_time" content="2023-08-14T23:57:00.831Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Tools">
 <meta name="twitter:card" content="summary">
@@ -177,6 +177,8 @@ $ python3 sqlmap.py -r 1.txt -D &quot;库名&quot; -T &quot;表名&quot; -C &quo
 <li>Microsoft SQL Server</li>
 </ul>
 <pre><code class="bash">$ python3 sqlmap.py -r 1.txt --dbms=Microsoft SQL Server
+</code></pre>
+<h3 id="Bypass-CF"><a href="#Bypass-CF" class="headerlink" title="# Bypass CF"></a># Bypass CF</h3><pre><code class="bash">$ python3 sqlmap.py -r 1.txt --tamper=&quot;between,randomcase,space2comment&quot; --batch --random-agent
 </code></pre>
 
     </div>
