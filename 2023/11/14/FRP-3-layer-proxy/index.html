@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>
+        FRP 3-layer proxy |
+        
+        SuperHua is Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frp 下载地址：https:&#x2F;&#x2F;github.com&#x2F;fatedier&#x2F;frp   使用frp做三层代理，网络拓扑图如下  VPS首先是我们自己的VPS，只需要做一个服务端的监听 # frps.ini [common] bind_port &#x3D; 7001   VPS只需要执行这一步，接下来先需要Server主机和Web主机建立连接 WebWeb机器先使用frps建立服务器监听，这里需要注意监听的I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FRP 3-layer proxy">
+<meta property="og:url" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/index.html">
+<meta property="og:site_name" content="SuperHua is Blog">
+<meta property="og:description" content="Frp 下载地址：https:&#x2F;&#x2F;github.com&#x2F;fatedier&#x2F;frp   使用frp做三层代理，网络拓扑图如下  VPS首先是我们自己的VPS，只需要做一个服务端的监听 # frps.ini [common] bind_port &#x3D; 7001   VPS只需要执行这一步，接下来先需要Server主机和Web主机建立连接 WebWeb机器先使用frps建立服务器监听，这里需要注意监听的I">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120121535277.png">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120122143872.png">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120122945527.png">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120122855271.png">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120132419003.png">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120132440284.png">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120132458933.png">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120132544927.png">
+<meta property="article:published_time" content="2023-11-14T08:53:07.000Z">
+<meta property="article:modified_time" content="2023-11-20T05:26:05.245Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://superhuabigcake.github.io/2023/11/14/FRP-3-layer-proxy/image-20231120121535277.png">
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://superhuabigcake.github.io/css/markdown.css">
+        
+            <link rel="stylesheet" href="https://superhuabigcake.github.io/css/july.css">
+        
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+
+<div id="banner-outer" class="hidden">
+    <div id="banner-image" style="background-image: url()"></div>
+    <img src="https://s1.ax1x.com/2023/06/18/pClXj4s.jpg" id="avatar">
+</div>
+
+<div id="menu-outer">
+    <div id="menu-inner">
+        
+            <a class="false" href="https://superhuabigcake.github.io/index.html">Home</a>
+        
+            <a class="false" href="https://superhuabigcake.github.io/archives/index.html">Archives</a>
+        
+            <a class="false" href="https://superhuabigcake.github.io/about/index.html">About</a>
+        
+    </div>
+</div>
+
+<div id="content-outer" class="container">
+    <div id="content-inner">
+        <article id="post">
+    <h1 id="post-title">FRP 3-layer proxy</h1>
+    <time id="post-date" datetime="2023-11-14T08:53:07.000Z">
+        November 14, 2023
+    </time>
+    <div id="post-content" class="markdown-body">
+        <h1 id="Frp"><a href="#Frp" class="headerlink" title="Frp"></a>Frp</h1><blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp">https://github.com/fatedier/frp</a></p>
+</blockquote>
+<p><img src="/2023/11/14/FRP-3-layer-proxy/image-20231120121535277.png" alt="image-20231120121535277"></p>
+<p>使用frp做三层代理，网络拓扑图如下</p>
+<p><img src="/2023/11/14/FRP-3-layer-proxy/image-20231120122143872.png" alt="image-20231120122143872"></p>
+<h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p>首先是我们自己的VPS，只需要做一个服务端的监听</p>
+<pre><code class="bash"># frps.ini
+[common]
+bind_port = 7001
+</code></pre>
+<p><img src="/2023/11/14/FRP-3-layer-proxy/image-20231120122945527.png" alt="image-20231120122945527"></p>
+<p>VPS只需要执行这一步，接下来先需要Server主机和Web主机建立连接</p>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p>Web机器先使用frps建立服务器监听，这里需要注意监听的IP要是192.168.159.128</p>
+<pre><code class="bash"># frps.ini
+[common]
+bind_addr = 192.168.159.128
+bind_port = 9999
+</code></pre>
+<p><img src="/2023/11/14/FRP-3-layer-proxy/image-20231120122855271.png" alt="image-20231120122855271"></p>
+<h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><p>Web机器已经进行监听，所以我们使用Server主机连接Web主机</p>
+<pre><code class="bash"># frpc.ini
+[common]
+server_addr = 192.168.159.128
+server_port = 9999
+
+[socks5]
+type = tcp
+remote_port = 1080
+plugin = socks5
+</code></pre>
+<p>Server主机去连接Web服务器监听的9999端口，由于我们还需要访问PC主机，所以在目标主机开个Socks5代理</p>
+<p><img src="/2023/11/14/FRP-3-layer-proxy/image-20231120132419003.png" alt="image-20231120132419003"></p>
+<p>此时Web主机和Server主机已经建立了连接，接下来需要Web主机去连接我们的VPS，并且需要将Server主机连接Web主机的端口转发出来</p>
+<h2 id="Web-1"><a href="#Web-1" class="headerlink" title="Web"></a>Web</h2><pre><code class="bash"># frpc.ini
+[common]
+server_addr = 192.168.43.147
+server_port = 7001
+
+[1]
+type = tcp
+local_ip = 192.168.159.128
+local_port = 1080
+remote_port = 8848
+</code></pre>
+<p><img src="/2023/11/14/FRP-3-layer-proxy/image-20231120132440284.png" alt="image-20231120132440284"></p>
+<p>此时已经把1080端口转发给了8848端口，那么我们就可以直接连接VPS的8848端口就达到了访问Server主机的网络环境</p>
+<p><img src="/2023/11/14/FRP-3-layer-proxy/image-20231120132458933.png" alt="image-20231120132458933"></p>
+<p><img src="/2023/11/14/FRP-3-layer-proxy/image-20231120132544927.png" alt="image-20231120132544927"></p>
+<p>这样就完成了使用frp搭建三层代理</p>
+
+    </div>
+</article>
+
+<div id="paginator">
+    
+</div>
+
+    </div>
+</div>
+
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        2019-2023 John Doe 
+    </div>
+</div>
+
+<div id="to-top">
+    <i class="iconfont icon-up"></i>
+</div>
+
+
+    
+        <script src="https://superhuabigcake.github.io/js/jquery-3.4.1.min.js"></script>
+    
+        <script src="https://superhuabigcake.github.io/js/highlight-9.13.1.min.js"></script>
+    
+        <script src="https://superhuabigcake.github.io/js/transition.js"></script>
+    
+        <script src="https://superhuabigcake.github.io/js/smooth-scroll.min.js"></script>
+    
+
+
+
+    <script>
+      $(function () {
+        $('#banner-outer').addClass('fade-out')
+        $('#menu-outer').addClass('fade-show')
+
+        $('pre').each(function (i, block) {
+          hljs.highlightBlock(block);
+        });
+      })
+    </script>
+
+
+<script>
+  $(function () {
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 150) {
+        $("#to-top").fadeIn();
+      } else {
+        $("#to-top").fadeOut();
+      }
+    });
+    $("#to-top").click(function () {
+      $("body,html").animate({scrollTop: 0}, 500);
+      return false;
+    })
+  })
+</script>
+</body>
+</html>
