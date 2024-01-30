@@ -15,11 +15,13 @@
 <meta property="og:site_name" content="SuperHua is Blog">
 <meta property="og:description" content="常规使用 GET型  $ python3 sqlmap.py -u &quot;url&quot; --dbs  $ python3 sqlmap.py -u &quot;url&quot; -D &quot;库名&quot; --tables  $ python3 sqlmap.py -u &quot;url&quot; -D &quot;库名&quot; -T &quot;表名&quot; -">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://superhuabigcake.github.io/2023/06/18/Sqlmap-User-Manua/image-20240130100415228.png">
 <meta property="article:published_time" content="2023-06-18T15:01:22.000Z">
-<meta property="article:modified_time" content="2024-01-11T09:18:01.975Z">
+<meta property="article:modified_time" content="2024-01-30T02:08:45.861Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Tools">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://superhuabigcake.github.io/2023/06/18/Sqlmap-User-Manua/image-20240130100415228.png">
     
     
     
@@ -170,6 +172,11 @@ $ python3 sqlmap.py -r 1.txt -D &quot;库名&quot; -T &quot;表名&quot; -C &quo
 <blockquote>
 <p>官方说明:<a target="_blank" rel="noopener" href="https://github.com/sqlmapproject/sqlmap/issues/4091">https://github.com/sqlmapproject/sqlmap/issues/4091</a></p>
 </blockquote>
+<p>或者使用 ghauri 这款工具</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/r0oth3x49/ghauri">https://github.com/r0oth3x49/ghauri</a></p>
+</blockquote>
+<p><img src="/2023/06/18/Sqlmap-User-Manua/image-20240130100415228.png" alt="image-20240130100415228"></p>
 <h3 id="指定数据库类型"><a href="#指定数据库类型" class="headerlink" title="# 指定数据库类型"></a># 指定数据库类型</h3><p>以下是举例部分数据库类型</p>
 <ul>
 <li>MySQL</li>
@@ -188,6 +195,20 @@ $ python3 sqlmap.py -r 1.txt -D &quot;库名&quot; -T &quot;表名&quot; -C &quo
 <li>–skip-urlebcode</li>
 </ul>
 <pre><code class="bash">$ python3 sqlmap.py -r 1.txt --skip-urlebcode
+</code></pre>
+<h3 id="爬取"><a href="#爬取" class="headerlink" title="# 爬取"></a># 爬取</h3><ul>
+<li>–crawl：指定爬取深度（例如：指定值为 2 表示让 SQLMap 最多爬取两层目录）</li>
+</ul>
+<pre><code class="bash">$ python3 sqlmap.py -r 1.txt --skip-urlebcode --crawl=2
+</code></pre>
+<p>如果想排除爬取范围内的任意页面，我们可以通过使用 –crawl-exclude 参数</p>
+<pre><code class="bash">$ python3 sqlmap.py -r 1.txt --skip-urlebcode --crawl=2 --crawl-exclude=”logout”
+</code></pre>
+<p>该命令可以最多爬取三层目录，并排除任何存在 “logout”(注销) 关键字的 URL</p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="# 表单"></a># 表单</h3><ul>
+<li>–forms：针对 -u 参数url获取页面中的from表单进行测试</li>
+</ul>
+<pre><code class="bash">$ python3 sqlmap.py -u &quot;http://127.0.0.1&quot; --forms
 </code></pre>
 
     </div>
